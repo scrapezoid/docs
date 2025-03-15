@@ -63,12 +63,17 @@ aux_links:
   Sign Up: https://scrapezoid.com/signup
 
 collections:
+  usage:
+    permalink: "/:collection/:path/"
+    output: true
   misc:
     permalink: "/:collection/:path/"
     output: true
 
 just_the_docs:
   collections:
+    usage:
+      name: Usage
     misc:
       name: Miscellaneous
 

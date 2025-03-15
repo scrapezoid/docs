@@ -5,10 +5,12 @@ services:
       dockerfile: Dockerfile
     environment:
       RUBY_ENV: development
+      JEKYLL_ENV: development
     tty: true
     stdin_open: true
     volumes:
       - .:/app
     ports:
       - "4000:4000"
-    command: ["bundle", "exec", "jekyll", "serve", "--host", "0.0.0.0", "--watch"]
+      - "35729:35729"  # LiveReload port
+    command: ["bundle", "exec", "jekyll", "serve", "--host", "0.0.0.0", "--watch", "--livereload", "--force_polling"]
