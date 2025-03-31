@@ -60,7 +60,8 @@ plugins:
 #   - vendor/ruby/
 
 aux_links:
-  Sign Up: https://scrapezoid.com/signup
+  Sign Up: https://app.scrapezoid.com/signup
+  Scrapezoid Console: https://app.scrapezoid.com
 
 collections:
   usage:
@@ -78,10 +79,16 @@ just_the_docs:
       name: Miscellaneous
 
 # Configure Just-the-docs navigation
-# nav_external_links:
-# - title: Scrapezoid API
-#   url: https://api.scrapezoid.com
-#   hide_icon: false
+nav_external_links:
+- title: ""
+  url: ""
+  hide_icon: true
+- title: Sign Up
+  url: https://app.scrapezoid.com/signup
+  hide_icon: false
+- title: Scrapezoid Console
+  url: https://app.scrapezoid.com
+  hide_icon: false
 
 # Enable search 
 search_enabled: true
