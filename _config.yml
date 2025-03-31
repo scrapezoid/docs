@@ -78,10 +78,10 @@ just_the_docs:
       name: Miscellaneous
 
 # Configure Just-the-docs navigation
-nav_external_links:
-- title: Scrapezoid API
-  url: https://api.scrapezoid.com
-  hide_icon: false
+# nav_external_links:
+# - title: Scrapezoid API
+#   url: https://api.scrapezoid.com
+#   hide_icon: false
 
 # Enable search 
 search_enabled: true
