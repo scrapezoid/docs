@@ -31,21 +31,19 @@ curl -X POST "https://api.scrapezoid.com/api/v1/scrape" \
 {
   "url": "https://example.com",
   "method": "GET",
-  "headers": {
-    "Authorization": "Bearer <token>"
-  },
-  "data": {
-    "key": "value"
-  }
+  "headers": [
+    "Authorization: Bearer <token>"
+  ],
+  "data": "{ \"key\": \"value\" }"
 }
 ```
 
-| Parameter  | Description  | Example   | Required    |
-|------------|--------------|-----------|-------------|
-| `url`      | The destination URL to scrape | `https://example.com` | Yes |
-| `method`   | The HTTP method to use | `GET` or `POST` | No |
-| `headers`  | HTTP headers to send to the destination URL | `Authorization: Bearer <token>` | No |
-| `data`     | The HTTP body to send to the destination URL | `{"key": "value"}` | No |
+| Parameter  | Type | Description  | Example   | Required    |
+|------------|------|--------------|-----------|-------------|
+| `url`      | string | The destination URL to scrape | `https://example.com` | Yes |
+| `method`   | string | The HTTP method to use | `GET` or `POST` | No |
+| `headers`  | array | HTTP headers to send to the destination URL | `["Authorization: Bearer <token>"]` | No |
+| `data`     | string | The HTTP body to send to the destination URL. Commonly used for `POST` requests. | `{ \"key\": \"value\" }` | No |
 
 ### Response
 
