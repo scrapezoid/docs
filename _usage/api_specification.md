@@ -6,15 +6,26 @@ nav_order: 2
 
 # API Specification
 
-## POST /api/v1/scrape
+## Example Request
 
-Fast HTTP mode. Use this endpoint for most use cases, unless you need
-Javascript or super stealth mode. The request will act similar to a curl request
-but has anti-blocking measures like browser mimicking built in.
+You can easily make your first API call by using `curl`. Here's an example:
 
-Requests to the destination URL is done using HTTP/1.1.
+```bash
+curl -X POST "https://api.scrapezoid.com/api/v1/scrape" \
+     -H "X-Scrapezoid-Auth: YOUR_API_KEY" \
+     -H "Content-Type: application/json" \
+     -d '{"url": "https://example.com"}'
+```
 
-### Request
+## Endpoints
+
+| Endpoint                          | Description |
+|-----------------------------------|-------------|
+| POST `/api/v1/scrape`                  | Fast HTTP mode. Use this endpoint for most use cases, unless you need Javascript or super stealth mode. The request will act similar to a curl request but has anti-blocking measures like browser mimicking built in. Requests to the destination URL is done using HTTP/1.1. |
+| POST `/api/v1/scrape/js`               | Javascript mode. Use this endpoint if you need to scrape websites that use Javascript to load content. This mode uses a custom headless browser that can execute Javascript with basic anti-blocking techniques. Some resources like stylesheets and images are not loaded for performance reasons. |
+| POST `/api/v1/scrape/js/super-stealth` | Super stealth mode. Use this endpoint if you need to scrape websites that use Javascript to load content and you're facing more advanced anti-scraping techniques. This mode uses a custom headless browser that can execute Javascript with advanced anti-blocking techniques. Some resources like stylesheets and images are not loaded for performance reasons. |
+
+### Request Structure
 
 ```json
 {
@@ -51,43 +62,12 @@ Requests to the destination URL is done using HTTP/1.1.
 }
 ```
 
-## POST /api/v1/scrape/js
-
-Javascript mode. Use this endpoint if you need to scrape websites that use
-Javascript to load content. This mode uses a custom headless browser that can
-execute Javascript with basic anti-blocking techniques. Some resources like
-stylesheets and images are not loaded for performance reasons.
-
-Generally requests to this endpoint will take longer to complete as a fresh
-browser session is started, and it's recommended to set a client timeout of at
-least 60 seconds.
-
-### Request
+### Error Response
 
 ```json
 {
-  "url": "https://example.com"
+  "code": 401,
+  "message": "Unauthorized",
+  "details": "The API key you provided is invalid. Please check your API key and try again."
 }
 ```
-
-## POST /api/v1/scrape/js/super-stealth
-
-Super stealth mode. Use this endpoint if you need to scrape websites that use
-Javascript to load content and you're facing more advanced anti-scraping techniques. 
-This mode uses a custom headless browser that can execute Javascript with advanced
-anti-blocking techniques. Some resources like stylesheets and images are not loaded 
-for performance reasons.
-
-Generally requests to this endpoint will take longer to complete as a fresh
-browser session is started, captchas may need to be solved during the request, and 
-Scrapezoid may retry a request multiple times if it detects that the request was blocked.
-
-### Request
-
-```json
-{
-  "url": "https://example.com"
-}
-```
-
-
