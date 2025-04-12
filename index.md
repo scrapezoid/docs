@@ -10,11 +10,20 @@ layout: home
 
 Scrapezoid is a web scraping API that gives you web scraping superpowers.
 
+Scrapezoid was born due to some of the frustrations with other web scraping services.
+Many claim to be able to work around anti-scraping measures, but in our experience,
+very few actually work. Scrapezoid was built to be reliable and easy to use.
+
+Many other services also have restrictive rate limits and request limits. It's
+common that a lot of data is needed for many data science and machine learning
+projects. We've designed Scrapezoid to able to scale for larger scraping projects.
+
 ## Features
 
 ### Flexible web scraping modes
 
-Scrapezoid supports 3x different web scraping modes:
+Scrapezoid supports 3x different web scraping modes. Each mode has different
+tradeoffs and is suited for different use cases.
 
 1. **Fast mode:** scrape websites like a curl request, with basic anti-blocking.
 It's recommended to use this mode for most use cases. If you find that

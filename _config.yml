@@ -60,8 +60,8 @@ plugins:
 #   - vendor/ruby/
 
 aux_links:
-  Sign Up: https://app.scrapezoid.com/signup
-  Scrapezoid Console: https://app.scrapezoid.com
+  Sign Up: https://console.scrapezoid.com/signup
+  Scrapezoid Console: https://console.scrapezoid.com
 
 collections:
   usage:
@@ -84,10 +84,10 @@ nav_external_links:
   url: ""
   hide_icon: true
 - title: Sign Up
-  url: https://app.scrapezoid.com/signup
+  url: https://console.scrapezoid.com/signup
   hide_icon: false
 - title: Scrapezoid Console
-  url: https://app.scrapezoid.com
+  url: https://console.scrapezoid.com
   hide_icon: false
 
 # Enable search 
