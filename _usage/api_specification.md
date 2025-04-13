@@ -49,14 +49,16 @@ curl -X POST "https://api.scrapezoid.com/api/v1/scrape" \
 
 ```json
 {
+  "request_id": "123e4567-e89b-12d3-a456-426614174000",
   "status_code": 200,
-  "content_type": "text/html",
   "headers": {
     "server": "nginx",
     "content-length": "123",
     "content-type": "text/html"
   },
-  "content": "<html><body>Hello, world!</body></html>"
+  "content": "<html><body>Hello, world!</body></html>",
+  "has_errors": false,
+  "errors": []
 }
 ```
 
@@ -64,8 +66,11 @@ curl -X POST "https://api.scrapezoid.com/api/v1/scrape" \
 
 ```json
 {
-  "code": 401,
-  "message": "Unauthorized",
-  "details": "The API key you provided is invalid. Please check your API key and try again."
+  "request_id": "123e4567-e89b-12d3-a456-426614174000",
+  "status_code": 401,
+  "headers": {},
+  "content": "",
+  "has_errors": true,
+  "errors": ["The API key you provided is invalid. Please check your API key and try again."]
 }
 ```
