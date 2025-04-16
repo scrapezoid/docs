@@ -13,7 +13,7 @@ including:
 - TLS fingerprint mimicry
 - User-Agent spoofing
 - IP rotation
-- Residential IP rotation
+- The use of residential IP addresses
 - Captcha solving
 - Custom patches when using browser emulation on Javascript endpoints
 
