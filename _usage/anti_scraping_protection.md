@@ -20,13 +20,11 @@ including:
 We aim to provide the most effective anti-scraping protection available 
 and to give you a valid response for the first request that you make.
 
-When Scrapezoid needs to deal with some anti-scraping technologies, it may
-make more than one request to the destination URL. Scrapezoid will
-attempt to detect various anti-scraping techniques and apply the appropriate
-behaviour to get a valid response. This capability is available out of the box
-and is fully integrated within Scrapezoid.
+When Scrapezoid detects some anti-scraping technologies, it may result in
+Scrapezoid making more than one request to the destination URL. This behaviour
+is triggered automatically and is fully integrated within Scrapezoid.
 
-This might mean that a request will take longer to complete than usual. It's
+This might mean that your API request may take longer to complete than usual. It's
 recommended to use a generous timeout when the websites you're targeting are
 using extensive anti-scraping protections.
 
